@@ -1,3 +1,5 @@
+https://help.insight.com/app/answers/detail/a_id/136
+
 - primary objective of a container
   - to normalize the environment application run in
   - to provide one avenue to smooth out the differences between development,
@@ -41,3 +43,16 @@
       except Docker returns us to the console immediately without streaming
       the logs
     - we can access the logs by running docker logs <container_name>
+
+- interactive containers
+  - what if you want to work on a base Ubuntu image from the console to try out
+    a couple of utilities?
+  - uses flags -i and -t
+  - ex: docker run --rm --name ubuntu_test -it ubuntu bash
+    - Docker downloads image, reads the last argument provided, and starts the
+      program for you in the container
+    - then, will be launched into bash terminal with root privileges inside
+      the container
+    - common bash commands to test: whoami, ls, apt
+    - if type exit into bash, it will close the Ubuntu process and remove the
+      container because of the --rm option in our docker run command
