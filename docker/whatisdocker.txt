@@ -7,3 +7,37 @@
   - containers are lighter, faster, and leaner than VMs
   - share the host kernel rather than running separate kernels on top of the
     hypervisor
+
+- docker run <image_name>
+  - when you want to start a container, you are requesting an image
+  - docker first looks at your local cache for the image
+  - if not found, it goes to Docker Hub to grab the image
+
+- other common commands
+  - docker build
+  - docker pull
+
+- long-running containers
+  - most containers, unlike hello-world, kick off a process that is meant to
+    stay running
+  - nginx: lightweight web server
+    - image starts program such that it does not terminate immediately
+    - leave the container up and streams logs to console
+    - ex: docker run --rm -p 8080:80 nginx
+      - --rm tells Docker to remove the container when it stops
+      - -p 8080:80 tells Docker to map port 8080 on the engine to port 80 on
+        the container
+      - go to http://localhost:8080/ to check out the web-side and what the
+        console response shows
+  - docker ps
+    - displays a list of active containers
+  - --name <container_name>
+    - with this extra command option for docker run, we can create a custom
+      name for our container
+  - docker stop <container_name>
+    - stops container
+  - -d
+    - used as an option for docker run which starts container just like before
+      except Docker returns us to the console immediately without streaming
+      the logs
+    - we can access the logs by running docker logs <container_name>
