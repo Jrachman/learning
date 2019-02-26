@@ -4,4 +4,6 @@
     testing, and production
 
 - containers difference from VMs
-  - 
+  - containers are lighter, faster, and leaner than VMs
+  - share the host kernel rather than running separate kernels on top of the
+    hypervisor
