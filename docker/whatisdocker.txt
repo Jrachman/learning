@@ -1,0 +1,7 @@
+- primary objective of a container
+  - to normalize the environment application run in
+  - to provide one avenue to smooth out the differences between development,
+    testing, and production
+
+- containers difference from VMs
+  - 
