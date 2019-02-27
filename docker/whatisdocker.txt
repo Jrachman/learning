@@ -1,9 +1,14 @@
 https://help.insight.com/app/answers/detail/a_id/136
 
+- Docker is a computer program that performs operating-system-level
+  virtualization, also known as “containerization”.
+
 - primary objective of a container
-  - to normalize the environment application run in
-  - to provide one avenue to smooth out the differences between development,
+  - normalize the environment application run in
+  - provide one avenue to smooth out the differences between development,
     testing, and production
+  - allow us to package all the things that our application needs like such as
+    libraries and other dependencies and ship it all as a single package
 
 - containers difference from VMs
   - containers are lighter, faster, and leaner than VMs
@@ -56,3 +61,45 @@ https://help.insight.com/app/answers/detail/a_id/136
     - common bash commands to test: whoami, ls, apt
     - if type exit into bash, it will close the Ubuntu process and remove the
       container because of the --rm option in our docker run command
+
+# Build a Docker image
+$ docker build -t [image_name]:[tag] .
+
+# Run a Docker container specifying a name
+$ docker run --name [container_name] [image_name]:[tag]
+
+# Fetch the logs of a container
+$ docker logs -f [container_id_or_name]
+
+# Run a command in a running container
+$ docker exec -it [container_id_or_name] bash
+
+# Show running containers
+$ docker ps
+
+# Show all containers
+$ docker ps -a
+
+# Show Docker images
+$ docker images
+
+# Stop a Docker container
+$ docker stop [container_id_or_name]
+
+# Remove a Docker container
+$ docker rm [container_id_or_name]
+
+# Remove a Docker image
+$ docker rmi [image_id_or_name]
+
+# Stop all running containers
+$ docker stop $(docker ps -q)
+
+# Remove all containers
+$ docker rm $(docker ps -aq)
+
+# Remove all images
+$ docker rmi $(docker images -aq)
+
+# Remove all containers
+$ docker rm -f $(docker ps -aq)

@@ -1,0 +1,5 @@
+- if you are trying to make another instance of your terminal in the same
+  session, click CMD+d
+
+- cd -
+  - used to go to the previous directory that you were at

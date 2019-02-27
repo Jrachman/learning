@@ -13,6 +13,9 @@ https://github.com/pyenv/pyenv-virtualenv
 - pyenv install -l
   - lists all available versions of Python available
 
+- pyenv install <python_version>
+  - run before creating your virtualenv if you need a Python version
+
 - pyenv activate <environment_name>
   - activates a pyenv virtual environment
 
@@ -21,3 +24,6 @@ https://github.com/pyenv/pyenv-virtualenv
 
 - pyenv uninstall <environment_name>
   - remove existing virtual environment
+
+- which python
+  - use to check whether or not the environment is active
