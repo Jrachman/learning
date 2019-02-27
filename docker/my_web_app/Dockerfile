@@ -16,6 +16,8 @@ ENTRYPOINT ["python"]
 # Set the command as the script name
 CMD ["app.py"]
 
+
+
 #=================================HOW-TO DOCKER=================================
 #
 # how to build image for Dockerfile
