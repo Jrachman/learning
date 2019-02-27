@@ -17,6 +17,7 @@ ENTRYPOINT ["python"]
 CMD ["app.py"]
 
 #=================================HOW-TO DOCKER=================================
+#
 # how to build image for Dockerfile
 #   - docker build -t <name>:<tag .
 #     - the tag can be a version number
@@ -31,5 +32,10 @@ CMD ["app.py"]
 #       - use to check if a container is currently running
 #       - adding -a as an option show the history of past continuous containers
 #     - go to localhost:5000 to check out the web app from the container
-# how to stop a container
-#   - docker stop <name>
+# how to stop/remove a container
+#   - docker stop <name_or_id>
+#   - docker rm <name_or_id>
+# how to remove images
+#   - docker rmi <name>:<tag>
+#
+# (additional commands are in whatisdocker.txt)
