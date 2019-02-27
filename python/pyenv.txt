@@ -1,4 +1,23 @@
 https://github.com/pyenv/pyenv-virtualenv
 
-- creating a virtual environment
-  - 
+- pyenv virtualenv <python_version> <environment_name>
+  - creates a virtual environment for a specific Python version
+
+- pyenv virtualenv <environment_name>
+  - creates a virtual environment using the current pyenv Python version
+  - pyenv python_version
+    - checks the current pyenv Python version
+- pyenv virtualenvs
+  - shows list of existing virtual environments
+
+- pyenv install -l
+  - lists all available versions of Python available
+
+- pyenv activate <environment_name>
+  - activates a pyenv virtual environment
+
+- pyenv deactivate
+  - deactivates the current pyenv virtual environment
+
+- pyenv uninstall <environment_name>
+  - remove existing virtual environment
