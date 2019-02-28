@@ -1,2 +1,7 @@
 - use f strings for inserting things into strings
   - ex: f'we are printing the number zero: {0}'
+
+- when dealing with dictionaries, use .get(key, default_value) instead of the
+  square brackets when parsing through things
+  - the default value is for if the key does not exist and it will return that
+    value
