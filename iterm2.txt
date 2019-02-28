@@ -3,3 +3,5 @@
 
 - cd -
   - used to go to the previous directory that you were at
+
+- remember to use tab complete when navigating

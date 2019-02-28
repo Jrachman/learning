@@ -1,0 +1,2 @@
+- use f strings for inserting things into strings
+  - ex: f'we are printing the number zero: {0}'
