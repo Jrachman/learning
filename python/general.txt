@@ -5,3 +5,5 @@
   square brackets when parsing through things
   - the default value is for if the key does not exist and it will return that
     value
+  - use the square brackets on dictionaries that you wrote
+  - use .get on dictionaries that you did not write or from api's
