@@ -7,3 +7,10 @@
     value
   - use the square brackets on dictionaries that you wrote
   - use .get on dictionaries that you did not write or from api's
+
+- for creating a new branch on git (and changing branches)
+  - git checkout -b <branch_name>
+  - git checkout <branch_name>
+
+- for seeing all branches
+  - git branch -a
