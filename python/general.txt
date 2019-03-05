@@ -5,6 +5,9 @@
   square brackets when parsing through things
   - the default value is for if the key does not exist and it will return that
     value
+    - WHEN DEFINING THE default_value (it is None when you do not set it), only
+      make it either [] or {} when you have to go INTO the data that you are
+      getting
   - use the square brackets on dictionaries that you wrote
   - use .get on dictionaries that you did not write or from api's
 
