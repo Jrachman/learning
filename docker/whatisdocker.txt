@@ -62,6 +62,22 @@ https://help.insight.com/app/answers/detail/a_id/136
     - if type exit into bash, it will close the Ubuntu process and remove the
       container because of the --rm option in our docker run command
 
+- common instructions to put in Dockerfile
+  - FROM — set base image
+  - RUN — execute command in container
+  - ENV — set environment variable
+  - WORKDIR — set working directory
+  - VOLUME — create mount-point for a volume
+  - CMD — set executable for container
+  - ex: FROM ubuntu:latest
+         RUN apt-get update \
+             && apt-get install --no-install-recommends --no-install-suggests -y curl \
+             && rm -rf /var/lib/apt/lists/*
+         ENV SITE_URL http://example.com/
+         WORKDIR /data
+         VOLUME /data
+         CMD sh -c "curl -Lk $SITE_URL > /data/results"
+         
 # Build a Docker image
 $ docker build -t [image_name]:[tag] .
 
