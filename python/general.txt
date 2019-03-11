@@ -17,3 +17,11 @@
 
 - for seeing all branches
   - git branch -a
+
+- reducing any chance for collisions in the similarities between generated
+  strings is very important
+  - ex: movie_info = get_movie_info(content_id)
+        movie_id = f"movie_{movie_info['id']}"
+        format_id = f"format_{movie_id}"
+    - movie_id and format_id will not collide because format_id is built on
+      the movie_id instead of just being built off of the id as well
