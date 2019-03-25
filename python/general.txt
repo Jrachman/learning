@@ -11,13 +11,6 @@
   - use the square brackets on dictionaries that you wrote
   - use .get on dictionaries that you did not write or from api's
 
-- for creating a new branch on git (and changing branches)
-  - git checkout -b <branch_name>
-  - git checkout <branch_name>
-
-- for seeing all branches
-  - git branch -a
-
 - reducing any chance for collisions in the similarities between generated
   strings is very important
   - ex: movie_info = get_movie_info(content_id)

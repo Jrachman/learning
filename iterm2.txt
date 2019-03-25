@@ -5,3 +5,17 @@
   - used to go to the previous directory that you were at
 
 - remember to use tab complete when navigating
+
+- for creating a new branch on git (and changing branches)
+  - git checkout -b <branch_name>
+  - git checkout <branch_name>
+
+- for seeing all branches
+  - git branch -a
+
+- ctrl-c
+  - use to clear the current command that you are writing to reduce hassle
+
+- ctrl-r
+  - used to search through previous commands executed within your session
+  - better than just clicking the up arrow
