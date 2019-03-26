@@ -77,7 +77,7 @@ https://help.insight.com/app/answers/detail/a_id/136
          WORKDIR /data
          VOLUME /data
          CMD sh -c "curl -Lk $SITE_URL > /data/results"
-         
+
 # Build a Docker image
 $ docker build -t [image_name]:[tag] .
 
@@ -119,3 +119,5 @@ $ docker rmi $(docker images -aq)
 
 # Remove all containers
 $ docker rm -f $(docker ps -aq)
+
+-d refers to running your docker container detached (in the background)
