@@ -1,2 +1,4 @@
 listed here are all of the packages I use for Atom:
   - split-diff
+
+- if you want to run a command, click CMD+SHIFT+P
