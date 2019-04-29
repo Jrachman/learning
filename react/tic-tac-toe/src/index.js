@@ -1,3 +1,17 @@
+// - for methods, it is conventional to use on[Event] and handle[Event] for
+//   names
+// - classes are called React component class/type and takes in parameters
+//   called props and returns hierarchy of views to display via the render
+//   method
+// - use arrow function syntax to avoid the confusing behavior of "this"
+// - add constructors to classes to initialize states
+//   - must always start with a "super(props);" call
+// - to collect data from multiple children, or have two children components
+//   communicate with each other, you need to declar the shared state in their
+//   parent component instead
+//   - lifting state into a parent component
+// - the onClick prop tells React to set up a click event listener
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -5,7 +19,10 @@ import './index.css';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
+      <button
+        className="square"
+        onClick={() => this.props.onClick()} // when clicked, React will call the onClick handler defined here
+      >
         {this.props.value}
       </button>
     );
@@ -13,8 +30,19 @@ class Square extends React.Component {
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    }
+  }
   renderSquare(i) {
-    return <Square value={i} />;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)} // the call to this.props.onClick() is specified here and calls handleClick(i)
+      />
+    );
   }
 
   render() {
