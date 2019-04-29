@@ -16,7 +16,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
+class Square extends React.Component { // considered a controlled component because Board has full control
   render() {
     return (
       <button
@@ -36,6 +36,13 @@ class Board extends React.Component {
       squares: Array(9).fill(null),
     }
   }
+
+  handleClick(i) {
+    const squares = this.state.squares.slice(); // creates copy of the squares array
+    squares[i] = "X";
+    this.setState({squares: squares});
+  }
+
   renderSquare(i) {
     return (
       <Square
