@@ -20,6 +20,18 @@
 // - the map method is commonly used for mapping data to other data
 //   - ex) const numbers = [1, 2, 3];
 //         const doubled = numbers.map(x => x * 2); // [2, 4, 6]
+// - it’s strongly recommended that you assign proper keys whenever you build
+//   dynamic lists
+//   - when a list is re-rendered, React takes each list item’s key and searches
+//     the previous list’s items for a matching key. If the current list has a key
+//     that didn’t exist before, React creates a component. If the current list
+//     is missing a key that existed in the previous list, React destroys the
+//     previous component. If two keys match, the corresponding component is
+//     moved. Keys tell React about the identity of each component which allows
+//     React to maintain state between re-renders. If a component’s key changes,
+//     the component will be destroyed and re-created with a new state.
+// - The moves are never re-ordered, deleted, or inserted in the middle, so it’s
+//   safe to use the move index as a key.
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -88,12 +100,13 @@ class Game extends React.Component {
       history: [{
         squares: Array(9).fill(null),
       }],
+      stepNumber: 0,
       xIsNext: true,
     };
   }
 
   handleClick(i) {
-    const history = this.state.history;
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice(); // creates copy of the squares array
     if (calculateWinner(squares) || squares[i]) {
@@ -104,14 +117,33 @@ class Game extends React.Component {
       history: history.concat([{ // vs push(), concat doesn't mutate the original array
         squares: squares,
       }]),
+      stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
+    });
+  }
+
+  jumpTo(step) {
+    this.setState({
+      stepNumber: step,
+      xIsNext: (step % 2) === 0,
     });
   }
 
   render() {
     const history = this.state.history;
-    const current = history[history.length - 1];
+    const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
+
+    const moves = history.map((step, move) => {
+      const desc = move ?
+        "Go to move #" + move :
+        "Go to game start";
+      return (
+        <li key={move}>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        </li>
+      );
+    });
 
     let status;
     if (winner) {
@@ -131,7 +163,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{/* TODO */}</ol>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
