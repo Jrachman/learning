@@ -19,3 +19,9 @@
 - ctrl-r
   - used to search through previous commands executed within your session
   - better than just clicking the up arrow
+
+- grep <what you want to search> <files you want to search in>
+   - used to quickly search for keywords in files
+
+- use aws cli for grabbing csvs
+   - aws s3 sync s3://holland-ingest/showtime/scheduled--2019-05-12T04:00:00/csvs/Showtime out_directory
