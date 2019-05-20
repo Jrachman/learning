@@ -1,5 +1,9 @@
 listed here are all of the packages I use for Atom:
   - split-diff
+  - linter-flake8 (need to install the python flake8 package)
   - linter
+    - linter-ui-default
+    - intentions
+    - busy-signal
 
 - if you want to run a command, click CMD+SHIFT+P
