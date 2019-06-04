@@ -7,3 +7,4 @@ listed here are all of the packages I use for Atom:
     - busy-signal
 
 - if you want to run a command, click CMD+SHIFT+P
+- if you want to comment/uncomment out a block of code line by line, highlight lines that you want commented out and then click CMD+/
